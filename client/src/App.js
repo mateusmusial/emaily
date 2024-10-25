@@ -17,6 +17,9 @@ function App() {
         >
           Learn React Noob!
         </a>
+        <a href="/api/current_user" target="_self">
+          Current user
+        </a>
       </header>
     </div>
   );
