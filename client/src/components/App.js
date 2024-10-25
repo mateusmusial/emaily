@@ -10,6 +10,7 @@ function App() {
     <div>
       <BrowserRouter>
         <div>
+          <Header />
           <Route exact path="/" component={Landing} />
           <Route exact path="/surveys" component={Dashboard} />
           <Route path="/surveys/new" component={SurveyNew} />
