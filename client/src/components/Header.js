@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import logoEmaily from "../img/emaily-logo.png";
 import AuthButton from "./AuthButton";
 
@@ -27,15 +28,15 @@ class Header extends Component {
     return (
       <nav className="">
         <div className="flex flex-wrap items-center justify-between p-4">
-          <a
-            href="/"
+          <Link
+            to={this.props.auth ? "/surveys" : "/"}
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img src={logoEmaily} className="h-8" alt="Emaily Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">
               Emaily
             </span>
-          </a>
+          </Link>
           <ul>{this.renderContent()}</ul>
         </div>
       </nav>
