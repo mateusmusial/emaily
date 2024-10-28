@@ -15,9 +15,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="max-w-screen-lg mx-auto">
+      <div>
         <BrowserRouter>
-          <div>
+          <div className="container mx-auto">
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />

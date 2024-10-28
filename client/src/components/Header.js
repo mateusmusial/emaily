@@ -27,17 +27,15 @@ class Header extends Component {
   render() {
     return (
       <nav className="">
-        <div className="flex flex-wrap items-center justify-between p-4">
+        <div className="flex flex-wrap items-center justify-between p-4 max-w-screen-lg mx-auto">
           <Link
             to={this.props.auth ? "/surveys" : "/"}
-            className="flex items-center space-x-3 rtl:space-x-reverse"
+            className="flex items-center space-x-3"
           >
-            <img src={logoEmaily} className="h-8" alt="Emaily Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap">
-              Emaily
-            </span>
+            <img src={logoEmaily} className="h-10" alt="Emaily Logo" />
+            <span className="text-2xl font-semibold">Emaily</span>
           </Link>
-          <ul>{this.renderContent()}</ul>
+          <ul className="flex flex-row space-x-8">{this.renderContent()}</ul>
         </div>
       </nav>
     );
