@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import logoEmaily from "../img/emaily-logo.png";
 import AuthButton from "./AuthButton";
+import Payments from "./Payments";
 
 class Header extends Component {
   renderContent() {
@@ -16,11 +17,14 @@ class Header extends Component {
           </li>
         );
       default:
-        return (
-          <li>
+        return [
+          <li key="1">
+            <Payments />
+          </li>,
+          <li key="2">
             <AuthButton link="/api/logout" text="Logout" />
-          </li>
-        );
+          </li>,
+        ];
     }
   }
 
