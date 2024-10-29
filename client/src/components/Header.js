@@ -21,6 +21,11 @@ class Header extends Component {
           <li key="1">
             <Payments />
           </li>,
+          <li key="3">
+            <span className="block bg-cyan-500 px-4 py-2 text-center text-white rounded-lg">
+              Credits: {this.props.auth.credits}
+            </span>
+          </li>,
           <li key="2">
             <AuthButton link="/api/logout" text="Logout" />
           </li>,
@@ -37,7 +42,7 @@ class Header extends Component {
             className="flex items-center space-x-3"
           >
             <img src={logoEmaily} className="h-10" alt="Emaily Logo" />
-            <span className="text-2xl font-semibold">Emaily</span>
+            <span className="text-3xl font-semibold">Emaily</span>
           </Link>
           <ul className="flex flex-row space-x-8">{this.renderContent()}</ul>
         </div>
