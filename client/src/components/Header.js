@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import logoEmaily from "../img/emaily-logo.png";
+import { FcFeedback } from "react-icons/fc";
 import AuthButton from "./AuthButton";
 import Payments from "./Payments";
 
@@ -36,12 +36,12 @@ class Header extends Component {
   render() {
     return (
       <nav className="">
-        <div className="flex flex-wrap items-center justify-between p-4 max-w-screen-lg mx-auto">
+        <div className="flex flex-wrap items-center justify-between p-4">
           <Link
             to={this.props.auth ? "/surveys" : "/"}
             className="flex items-center space-x-3"
           >
-            <img src={logoEmaily} className="h-10" alt="Emaily Logo" />
+            <FcFeedback className="text-5xl" />
             <span className="text-3xl font-semibold">Emaily</span>
           </Link>
           <ul className="flex flex-row space-x-8">{this.renderContent()}</ul>
