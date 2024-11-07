@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
 import { RiMailSendLine } from "react-icons/ri";
 import formFields from "./formFields";
+import { withRouter } from "react-router-dom";
+import * as actions from "../../actions";
 
 function SurveyFormReview(props) {
   const renderContent = () => {
@@ -29,7 +31,10 @@ function SurveyFormReview(props) {
         >
           Back
         </button>
-        <button className="text-white bg-green-500 hover:bg-green-700 rounded-lg px-4 py-2 inline-flex items-center space-x-2 mr-8">
+        <button
+          className="text-white bg-green-500 hover:bg-green-700 rounded-lg px-4 py-2 inline-flex items-center space-x-2 mr-8"
+          onClick={() => props.submitSurvey(props.formValues, props.history)}
+        >
           <span>Send Survey</span>
           <RiMailSendLine className="text-xl" />
         </button>
@@ -42,4 +47,4 @@ function mapStateToProps(state) {
   return { formValues: state.form.surveyForm.values };
 }
 
-export default connect(mapStateToProps)(SurveyFormReview);
+export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));
